@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/styles/profile.css" rel="stylesheet">
+    <link href="/styles/header.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('header') %>
+    
+<div class="profile__user">
+    <div class="profile_bk"></div>
+    <div class="profile__content">
+        <div class="user">
+            <div class="user_cover">
+                <a class="user_pic">
+                    <img src="/img/profile.png" alt="profile">
+                </a>
+            </div>
+            <div class="user_info">
+                <div class="sort__info">
+                    <h3>mr.father Mysterious</h3>
+                    <p>good reader author</p>
+                    <div class="follow">
+                        <button><a href="/new">new post</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu">
+    <div>
+        <div class="menu_posts"><h4>Posts</h4></div>
+        <div class="menu_posts"><h4>mangos</h4></div>
+    </div>
+</div>
+<% if(locals.books && locals.books.length!==0) {%>
+<div class="user__posts">
+
+      <% books.forEach((book)=>{ %>
+        <a class="user__post" href="/book/<%=book.id %>">
+            <div class="user__post__cover">
+                <img src="https://covers.openlibrary.org/b/id/<%=book.cover_id%>-L.jpg">
+            </div>
+            <div class="user__post__content">
+                <div>
+                    <h4><%= book.title %></h4>
+                </div>
+                <div>
+                <p>mr.mysterious</p>
+                <p>rating:<%= book.rating %>/10</p>
+                </div>
+            </div>
+        </a>
+       <% }) %>
+</div>
+       <% }else{ %>
+        <div style="height:20rem;width:100%;display: flex; align-items:center;justify-content:center;">
+                <img src="/img/no_books.png" alt="no posts" style="height:7rem; width:7rem;object-fit:fill;border-radius:50%;">
+        </div>
+        <% } %>
+
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    /* background-color: aquamarine; */
+    padding: 0px 5rem;
+}
+.head{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    /* background-color: antiquewhite; */
+    
+}
+.reader{
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    padding-left: 4rem;
+    align-items: center;
+    /* background-color: aqua; */
+}
+.book{
+    display: grid;
+    width: 100%;
+    height: 15rem;
+    /* padding: 0px 5rem; */
+    padding-top: 2rem;
+    grid-template-columns: 1fr 3fr;
+    /* background-color: blue; */
+}
+.book_cover{
+    display: flex;
+    /* width: fit-content; */
+    /* background-color: brown; */
+    justify-content: center;
+    /* align-items: center; */
+  
+}
+.book__cover{
+    display: flex;
+    width: 10rem;
+    height:100% ;
+    overflow: hidden;
+    /* background-color: cadetblue; */
+}
+.book__cover>img{
+    object-fit: fill;
+    height:100%;
+    width: 100%;
+}
+.book_detailes{
+    display: flex;
+    flex-flow: column nowrap;
+    /* padding-top: 2rem; */
+    justify-content: space-between;
+    /* background-color: burlywood; */
+}
+.title{
+    display: flex;
+    height: 7rem;
+    /* background-color: chartreuse; */
+    
+}
+.title>h1{
+    word-wrap: break-word;
+    font-weight: 600;
+    font-size: 2rem;
+    word-spacing: 0.5rem;
+    font-family: 'Forum', sans-serif;
+}
+.rating{
+    display: flex;
+    flex-flow: column nowrap;
+    height: 7rem;
+    /* background-color: chocolate; */
+}
+.rating>h4{
+    padding:5px 0px;
+    font-weight:400 ;
+}
+.reader_no{
+   margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    /* background-color: blueviolet; */
+    padding-left: 4rem;
+     padding-top: 1rem;
+}
+.reader_no>h5{
+font-weight: 400;
+display: block;
+height: 2rem;
+
+padding-top: 1rem;
+font-size: 1rem;
+}
+.youshould{
+display: flex;
+height: fit-content;
+/* background-color: brown; */
+padding-left: 3rem;
+padding-right: 3rem;
+padding-top: 1rem;
+padding-bottom: 2rem;
+}
+.youshould>p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    
+}
+.notes{
+display: flex;
+height: fit-content;
+/* background-color: cadetblue; */
+flex-flow: column nowrap;
+padding: 3rem;
+
+}
+.notes>h2{
+    margin-bottom:2rem ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.notes>pre{
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    white-space: pre-wrap; 
+  word-wrap: break-word;
+}

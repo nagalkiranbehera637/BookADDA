@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/styles/header.css" rel="stylesheet">
+    <link href="/styles/search.css" rel="stylesheet">
+</head>
+<body>
+   <header class="header">
+            <div class="logo">
+                <a href="/">
+                    <h2>Read<span>ADDA</span></h2>
+                </a>
+            </div>
+            <div class="src_pro"> 
+                <div class="search_bar">
+                <form action="/search" method="post">
+                     <input type="text" name="search" placeholder="Find book here" value="<%= searchbar %>">
+                     <button type="submit"><a><img class="search_icon" src="/img/search.png" alt="search"></a></button>
+                </form>
+            </div>
+            <div class="space"></div>
+            <div class="profile">
+                <a href="/profile"><img src="/img/profile.png" alt="profile"></a>
+            </div>
+        </div>
+    </header>
+    <div class="search_result">
+        <% if(locals.books && locals.books.length!==0){ %>
+        <% books.forEach((book)=>{ %>
+        <a class="search_book" href="/book/<%= book.id %>">
+            <div class="search__book__cover">
+                <img src="https://covers.openlibrary.org/b/id/<%=book.cover_id%>-L.jpg">
+            </div>
+            <div class="search__book__content">
+                <h1><%= book.title %> by <%= book.author%></h1>
+                <h4>Mr.mysterious</h4>
+                <h4>read on: 2023-08-02.</h4> 
+                <h4>Rating: <%= book.rating %>/10</h4>
+                <p><%= book.why_should %></p>
+            </div>
+        </a>
+        <% } )%>
+        <% }else{ %>
+            <h1>No book Found on"<%= searchbar %>"</h1>
+            <% } %>
+    </div>
+</body>
+</html>

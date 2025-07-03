@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/styles/index.css" rel="stylesheet">
+    <link href="/styles/header.css" rel="stylesheet">
+</head>
+<body>
+   <%- include('header') %>
+    <div class="hero">
+        <div class="hero__image">
+            <img src="/img/img.png">
+        </div>
+    </div>
+    <div class="filter">
+        <div class="sorted">
+
+            <div class="sort_typo sort">
+                <a href="/sortBytypo"><img src="/img/typo.png" alt="sorted by typo"></a>
+            </div>
+            <div class="sort_recency sort">
+                <a href="/sortByrecency"><img src="/img/recency.png" alt="sorted by recency"></a>
+            </div>
+            <div class="sort_rating sort">
+                <a href="sortByrating"><img src="/img/rating.png" alt="sorted by rating"></a>
+            </div>
+        </div>
+    </div>
+    <div class="filter_title">
+        <div>
+        <h3>My Books</h3>
+        <p>sorted by : <%= locals.route  || 'trending' %></p>
+        </div>
+    </div>
+    <% if(locals.books && locals.books.length!==0) {%>
+    <div class="Books">
+        <% books.forEach((book)=>{ %>
+        <a class="Book" href="/book/<%=book.id%>">
+            <div class="Book__cover">
+                <img src="https://covers.openlibrary.org/b/id/<%=book.cover_id%>-L.jpg">
+            </div>
+            <div class="Book__content">
+                <div>
+                    <h4><%= book.title %></h4>
+                </div>
+                <div>
+                <p>mr.mysterious</p>
+                <p>rating:<%= book.rating%>/10</p>
+                </div>
+            </div>
+        </a>
+       <% }) %>
+
+    </div>
+    <% }else{ %>
+        <div style="height:20rem;width:100%;display: flex; align-items:center;justify-content:center;">
+                <img src="/img/no_books.png" alt="no posts" style="height:7rem; width:7rem;object-fit:fill;border-radius:50%;">
+        </div>
+        <% } %>
+</body>
+</html>
