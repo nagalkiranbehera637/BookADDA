@@ -56,6 +56,28 @@ app.get("/book/:id", async (req, res) => {
   }
 });
 
+app.get("/edit/:id",async(req,res)=>{
+      const id=req.params.id;
+      res.render("new.ejs") //cuurently it takes to the new page but we gonna update this soon
+})
+
+app.get("/delete/:id",async(req,res)=>{
+  const id=req.params.id;
+  try{
+    const result=await db.query("DELETE FROM books WHERE id=$1 RETURNING *;",[id]);
+    
+    if (result.rows.length === 0) {
+      console.log("No book found with that ID");
+    } else {
+      console.log("Deleted book:", result.rows[0]);
+    }
+    res.redirect("/profile")
+  }catch(err){
+    console.error("Error fetching book by ID:", err);
+    res.status(500).send("Server Error");
+  }
+})
+
 app.post("/search", async (req, res) => {
   try {
     const searchbar = req.body.search;
