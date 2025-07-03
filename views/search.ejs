@@ -37,7 +37,7 @@
             <div class="search__book__content">
                 <h1><%= book.title %> by <%= book.author%></h1>
                 <h4>Mr.mysterious</h4>
-                <h4>read on: 2023-08-02.</h4> 
+                <h4>read on: <%= book.read_date.toISOString().slice(0,10).split('-').reverse().join('/') %></h4> 
                 <h4>Rating: <%= book.rating %>/10</h4>
                 <p><%= book.why_should %></p>
             </div>

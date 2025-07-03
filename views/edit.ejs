@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/styles/header.css" rel="stylesheet">
+    <link href="/styles/newPost.css" rel="stylesheet">
+    
+</head>
+<body>
+    <%- include('header') %>
+<form class="book-form" action="/books/<%=book.id%>" method="POST">
+  <h2>Add a New Book-Note</h2>
+
+  <label for="title">Title</label>
+  <input type="text" id="title" name="title" value="<%=book.title%>" required />
+
+  <label for="author">Author Name</label>
+  <input type="text" id="author" name="author" value="<%= book.author %>" required />
+
+  <label for="why_should">Why You Read It</label>
+  <textarea id="why_should" name="why_should" rows="8"  required><%= book.why_should %></textarea>
+
+  <label for="note">Your Notes</label>
+  <textarea id="note" name="note" rows="15" required><%= book.note %></textarea>
+
+  <label for="read_date">Date Read</label>
+  <input type="date" id="read_date" name="read_date" value="<%=book.read_date? book.read_date.toISOString().slice(0,10) : ''%>"/>
+
+  <label for="rating">Rating (1 to 10)</label>
+  <input type="number" id="rating" name="rating" min="1" max="10" value="<%= book.rating %>" />
+
+  <!-- <label for="cover_id">Cover ID</label>
+  <input type="number" id="cover_id" name="cover_id" required /> -->
+
+  <!-- <label for="user_id">User ID</label>
+  <input type="number" id="user_id" name="user_id" value="1" /> -->
+
+  <!-- <label for="vote">Votes</label>
+  <input type="number" id="vote" name="vote" value="0" /> -->
+
+  <div><button type="submit">Edit Notes</button></div>
+</form>
+
+</body>
+</html>
