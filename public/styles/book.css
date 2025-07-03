@@ -32,13 +32,13 @@
 .book{
     display: grid;
     width: 100%;
-    height: 15rem;
+    height: fit-content;
     /* padding: 0px 5rem; */
     padding-top: 2rem;
     grid-template-columns: 1fr 3fr;
     /* background-color: blue; */
 }
-.book_cover{
+.book_covers{
     display: flex;
     /* width: fit-content; */
     /* background-color: brown; */
@@ -49,9 +49,9 @@
 .book__cover{
     display: flex;
     width: 10rem;
-    height:100% ;
+    height:90% ;
     overflow: hidden;
-    /* background-color: cadetblue; */
+    background-color: cadetblue;
 }
 .book__cover>img{
     object-fit: fill;
@@ -60,6 +60,7 @@
 }
 .book_detailes{
     display: flex;
+   height: fit-content;
     flex-flow: column nowrap;
     /* padding-top: 2rem; */
     justify-content: space-between;
@@ -84,18 +85,41 @@
     height: 7rem;
     /* background-color: chocolate; */
 }
+.edit {
+  height: 2rem;
+  display: flex;
+  /* background-color: aqua; */
+  column-gap: 10px;
+  align-items: center;
+}
+a{
+    cursor: pointer;
+}
+.edit >a{
+  background-color: #22d2bf;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 15px;
+  padding: 5px 20px;
+  
+  color: black;
+  display:block;
+  cursor:pointer;
+}
+.edit>a:hover{
+    background-color:#149588bb ;
+}
 .rating>h4{
     padding:5px 0px;
     font-weight:400 ;
 }
 .reader_no{
-   margin-top: 1rem;
+   /* margin-top: 1rem; */
     display: flex;
     width: 100%;
     height: 3rem;
     /* background-color: blueviolet; */
     padding-left: 4rem;
-     padding-top: 1rem;
+     /* padding-top: 10px; */
 }
 .reader_no>h5{
 font-weight: 400;

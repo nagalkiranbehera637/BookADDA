@@ -36,11 +36,20 @@ app.get("/", async (req, res) => {
 
 app.get("/book/:id", async (req, res) => {
   try {
-    const id = req.params.id;
+    var ids = req.params.id;
+    ids=ids.split('-')
+    const id=parseInt(ids[0])
+    const userid= parseInt(id[1]) || 0
+    const sessionuserid=2
     const result = await db.query("SELECT * FROM books WHERE id=$1", [id]);
     if (result.rows.length === 0) return res.status(404).send("Book not found");
     const date = await getDateFormat(result.rows[0].read_date);
-    res.render("book.ejs", { book: result.rows[0], date });
+    if(userid===sessionuserid){
+      res.render("book.ejs", { book: result.rows[0], date,edit:true});
+    }else{
+         res.render("book.ejs", { book: result.rows[0], date });
+    }
+ 
   } catch (err) {
     console.error("Error fetching book by ID:", err);
     res.status(500).send("Server Error");
