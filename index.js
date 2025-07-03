@@ -39,8 +39,8 @@ app.get("/book/:id", async (req, res) => {
     var ids = req.params.id;
     ids=ids.split('-')
     const id=parseInt(ids[0])
-    const userid= parseInt(id[1]) || 0
-    const sessionuserid=2
+    const userid= parseInt(ids[1]) || 0
+    const sessionuserid=1
     const result = await db.query("SELECT * FROM books WHERE id=$1", [id]);
     if (result.rows.length === 0) return res.status(404).send("Book not found");
     const date = await getDateFormat(result.rows[0].read_date);
