@@ -21,7 +21,7 @@
             </div>
             <div class="user_info">
                 <div class="sort__info">
-                    <h3>mr.father Mysterious</h3>
+                    <h3><%= locals.user.name %></h3>
                     <p>good reader author</p>
                     <div class="follow">
                         <button><a href="/new">new post</a></button>
@@ -41,7 +41,7 @@
 <div class="user__posts">
 
       <% books.forEach((book)=>{ %>
-        <a class="user__post" href="/book/<%=book.id%>-1">
+        <a class="user__post" href="/book/<%=book.id%>-<%= user.id %>">
             <div class="user__post__cover">
                 <img src="https://covers.openlibrary.org/b/id/<%=book.cover_id%>-L.jpg">
             </div>

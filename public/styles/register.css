@@ -1,0 +1,239 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+    
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    /* background-color: aqua; */
+}
+@media (max-width:800px) {
+     .heros{
+        display: none;
+    }
+    body{
+        grid-template-columns: 1fr;
+    }
+   
+}
+.heros {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: blue; */
+  overflow: hidden;
+  position: relative;
+}
+
+.hero_imgs {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory ;
+  scroll-behavior: smooth;
+}
+
+.hero_imgs::-webkit-scrollbar {
+  display: none; 
+}
+
+.img {
+  flex: 0 0 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+.img>img{
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+.img1{
+    background-color: rgb(127, 255, 144);
+}
+.img2{
+    background-color:   rgb(255, 127, 146);
+}
+.img3{
+    background-color: rgb(255, 229, 127);
+}
+
+.nav_scroll{
+    position: absolute;
+    bottom: 3rem;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    justify-self: center;
+    gap:1rem;
+}
+.nav_scroll>a{
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition:all ease 0.2s;
+}
+.nav_scroll>a:hover{
+    background-color: #fff;
+}
+
+
+.login{
+    height: 100vh;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login__main{
+    height: 80% ;
+    width: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+    /* background-color: blanchedalmond; */
+}
+h3{
+    color:rgba(73, 96, 96, 0.808);
+}
+input{
+    outline-offset: rgba(73, 96, 96, 0.808);
+    font-size: 1rem;
+}
+.login_title{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    /* background-color:rgb(11, 158, 75); */
+}
+.login_form{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+.login_form>form{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    flex-flow: column nowrap;
+}
+.field{
+    height: 20%;
+    width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+/* background-color: azure; */
+}
+.field>h3{
+    font-size: 12px;
+    font-weight: 400;
+}
+.field>input{
+    outline: none;
+    height: 70%;
+    width: 100%;
+}
+.sign__btn{
+    height: 30%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    padding-top:10px;
+
+    /* background-color: rgb(17, 198, 198); */
+}
+.sign__btn>input{
+    height:50%;
+    background-color: black;
+    color: white;
+    border: none;
+    width: 100%;
+}
+
+.or{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: brown; */
+}
+.or_line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    /* background-color: azure; */
+}
+.or_line>span{
+    width: 5rem;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.or_line>span>hr{
+    width: 100%;
+     border: none;
+    border-top:  1.5px solid black;
+}
+.google_login{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(198, 208, 55); */
+}
+.google_content{
+    display: flex;
+    color: black;
+    justify-content: center;
+    cursor: pointer;
+    column-gap: 1rem;
+    padding: 0px 5px;
+    align-items: center;
+    /* background-color: azure; */
+}
+.google_content>img{
+    height: 1rem;
+    width: 1rem;
+}
+.register{
+     height: 10%;
+    width: 100%;
+      display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    /* background-color: cadetblue; */
+}   
+.register>div{
+    display: flex;
+    justify-content: center;
+    padding: 0px 5px;
+    align-items: center;
+    /* background-color: azure; */
+}
